@@ -369,19 +369,26 @@ function renderTrails() {
     </article>
   `).join("");
 
-  grid.querySelectorAll(".details-btn").forEach(button => {
-    button.addEventListener("click", () => {
-      const trail = filtered[Number(button.dataset.index)];
-      alert(
-        trail.name + "\\n" + trail.location +
-        "\\nDifficulty: " + trail.difficulty +
-        "\\nDuration: " + trail.hours + " hours" +
-        "\\nElevation gain: " + trail.elevation + " m" +
-        "\\n\\n" + trail.description +
-        "\\n\\nDemonstration data: check official local guidance before hiking."
-      );
-    });
+  
+grid.querySelectorAll(".details-btn").forEach(button => {
+  button.addEventListener("click", () => {
+    const trail = filtered[Number(button.dataset.index)];
+
+    if (trail.name === "Black Lake Loop") {
+      window.location.href = "black-lake.html";
+      return;
+    }
+
+    alert(
+      trail.name + "\n" + trail.location +
+      "\nDifficulty: " + trail.difficulty +
+      "\nDuration: " + trail.hours + " hours" +
+      "\nElevation gain: " + trail.elevation + " m" +
+      "\n\n" + trail.description +
+      "\n\nDemonstration data: check official local guidance before hiking."
+    );
   });
+});
 }
 
 ["search", "difficulty", "duration", "elevation"].forEach(id => {
