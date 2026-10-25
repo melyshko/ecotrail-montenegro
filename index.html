@@ -3,260 +3,1575 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>EcoTrail Montenegro | Explore Naturally</title>
+<title>EcoTrail Montenegro | Explore Responsibly</title>
+<meta name="description" content="Discover Montenegro's hiking trails, connect with outdoor enthusiasts, and explore nature responsibly.">
+
 <style>
 :root {
-  --green:#244b38;
-  --dark:#183528;
-  --cream:#f7f5ed;
-  --sage:#e4eadf;
-  --text:#26372d;
-  --muted:#68776c;
-  --white:#fff;
+  --green: #245b43;
+  --green-dark: #173e2e;
+  --green-light: #e9f1e8;
+  --cream: #faf8f1;
+  --orange: #e9a65b;
+  --text: #25332b;
+  --muted: #69766d;
+  --white: #ffffff;
+  --border: #e2e7df;
+  --shadow: 0 8px 24px rgba(30, 60, 42, .09);
 }
-*{box-sizing:border-box}
-body{margin:0;background:var(--cream);color:var(--text);font-family:Arial,sans-serif;line-height:1.6}
-header{background:var(--green);color:white;padding:20px 7%;display:flex;align-items:center;justify-content:space-between;gap:20px;flex-wrap:wrap}
-.logo{font-size:1.35rem;font-weight:bold;letter-spacing:.3px}
-nav{display:flex;gap:20px;flex-wrap:wrap}
-nav a{color:white;text-decoration:none;font-weight:600}
-nav a:hover{text-decoration:underline}
-a{color:var(--green)}
-.hero{padding:75px 7%;background:linear-gradient(120deg,#244b38,#496d50);color:white}
-.hero h1{font-size:clamp(2.3rem,5vw,4.4rem);line-height:1.1;max-width:750px;margin:0 0 20px}
-.hero p{font-size:1.1rem;max-width:650px}
-.button{display:inline-block;background:var(--green);color:white;text-decoration:none;border:0;border-radius:8px;padding:12px 18px;font-weight:bold;cursor:pointer;font-size:.95rem}
-.button:hover{background:var(--dark)}
-.hero .button{background:#fff;color:var(--green);margin-top:12px}
-section{padding:45px 7%}
-.section-heading{margin-bottom:24px}
-.section-heading h2{font-size:2rem;margin:0 0 5px}
-.section-heading p{color:var(--muted);margin:0}
-.cards{display:grid;grid-template-columns:repeat(auto-fit,minmax(250px,1fr));gap:22px}
-.card{background:white;border-radius:14px;overflow:hidden;box-shadow:0 4px 16px #193b2710;display:flex;flex-direction:column}
-.card-top{min-height:145px;background:var(--sage);display:flex;align-items:center;justify-content:center;font-size:4rem}
-.card-content{padding:22px;display:flex;flex-direction:column;align-items:flex-start;flex:1}
-.card-content h3{margin:0 0 7px;font-size:1.25rem}
-.card-content p{margin:0 0 14px;color:var(--muted)}
-.tags{display:flex;flex-wrap:wrap;gap:7px;margin-bottom:18px}
-.tag{font-size:.8rem;padding:5px 9px;border-radius:30px;background:var(--sage);color:var(--green)}
-.card-content .button{margin-top:auto}
-.about{background:var(--sage)}
-.about-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:24px}
-.about-grid h3{margin-bottom:5px}
-.about-grid p{color:var(--muted);margin-top:0}
-.page{padding:35px 7% 60px;min-height:60vh}
-.back{display:inline-block;margin-bottom:25px;text-decoration:none;font-weight:bold}
-.detail-hero{padding:32px;background:var(--sage);border-radius:16px;margin-bottom:25px}
-.detail-hero .emoji{font-size:3.5rem}
-.detail-hero h1{font-size:clamp(2rem,4vw,3rem);line-height:1.15;margin:5px 0 10px}
-.detail-hero p{max-width:750px}
-.facts{display:grid;grid-template-columns:repeat(auto-fit,minmax(130px,1fr));gap:12px;margin:22px 0}
-.fact{background:white;border-radius:10px;padding:15px}
-.fact strong{display:block;color:var(--green)}
-.detail-grid{display:grid;grid-template-columns:2fr 1fr;gap:25px}
-.panel{background:white;padding:24px;border-radius:14px;margin-bottom:20px}
-.panel h2,.panel h3{margin-top:0}
-.panel li{margin-bottom:8px}
-.guide-list{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:20px}
-.guide{background:white;padding:22px;border-radius:14px}
-.avatar{font-size:2.8rem}
-.guide h3{margin:5px 0}
-.guide p{color:var(--muted)}
-footer{background:var(--dark);color:white;text-align:center;padding:25px 7%}
-footer p{margin:4px}
-form label{display:block;font-weight:bold;margin:12px 0 5px}
-input,select,textarea{width:100%;padding:11px;border:1px solid #ccd5cc;border-radius:7px;font:inherit}
-textarea{min-height:85px}
-form button{margin-top:15px}
-.notice{background:#f5f0dc;padding:12px;border-radius:8px;font-size:.9rem}
-[hidden]{display:none!important}
-@media(max-width:650px){
- header{padding:18px 5%}
- nav{gap:12px}
- .hero,section,.page{padding:32px 5%}
- .detail-grid{grid-template-columns:1fr}
+
+* { box-sizing: border-box; }
+
+html { scroll-behavior: smooth; }
+
+body {
+  margin: 0;
+  font-family: Arial, Helvetica, sans-serif;
+  color: var(--text);
+  background: var(--cream);
+  line-height: 1.6;
+}
+
+button, input, select, textarea { font: inherit; }
+
+button, a { -webkit-tap-highlight-color: transparent; }
+
+a { color: inherit; text-decoration: none; }
+
+button { cursor: pointer; }
+
+img { max-width: 100%; }
+
+header {
+  background: rgba(255,255,255,.97);
+  border-bottom: 1px solid var(--border);
+  position: sticky;
+  top: 0;
+  z-index: 10;
+}
+
+.nav {
+  max-width: 1180px;
+  margin: auto;
+  padding: 14px 22px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 20px;
+}
+
+.logo {
+  color: var(--green);
+  font-size: 1.25rem;
+  font-weight: 800;
+  white-space: nowrap;
+}
+
+.logo span { color: var(--orange); }
+
+.nav-links {
+  display: flex;
+  align-items: center;
+  gap: 22px;
+  flex-wrap: wrap;
+}
+
+.nav-links a {
+  font-size: .92rem;
+  font-weight: 600;
+}
+
+.nav-links a:hover { color: var(--green); }
+
+.menu-button {
+  display: none;
+  background: none;
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  padding: 7px 11px;
+}
+
+.container {
+  max-width: 1180px;
+  padding: 0 22px;
+  margin: auto;
+}
+
+.hero {
+  min-height: 470px;
+  display: flex;
+  align-items: center;
+  color: white;
+  background:
+    linear-gradient(90deg, rgba(15,42,29,.88), rgba(15,42,29,.25)),
+    url("https://images.unsplash.com/photo-1464822759023-fed622ff2c3b?auto=format&fit=crop&w=1800&q=85")
+    center 48% / cover;
+}
+
+.hero-content {
+  max-width: 690px;
+  padding: 75px 0;
+}
+
+.eyebrow {
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  font-size: .78rem;
+  font-weight: 800;
+  color: var(--orange);
+}
+
+h1 {
+  font-size: clamp(2.4rem, 6vw, 4.4rem);
+  line-height: 1.08;
+  margin: 14px 0 20px;
+}
+
+.hero p {
+  font-size: 1.12rem;
+  max-width: 580px;
+  color: #f0f3ed;
+}
+
+.button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  border: 0;
+  border-radius: 8px;
+  padding: 12px 19px;
+  background: var(--green);
+  color: white;
+  font-weight: 700;
+  transition: .2s;
+}
+
+.button:hover {
+  background: var(--green-dark);
+  transform: translateY(-1px);
+}
+
+.button-light {
+  background: white;
+  color: var(--green);
+}
+
+.button-light:hover {
+  background: var(--green-light);
+  color: var(--green-dark);
+}
+
+.button-outline {
+  background: transparent;
+  color: var(--green);
+  border: 1px solid var(--green);
+}
+
+.button-outline:hover { color: white; }
+
+.button-small {
+  padding: 8px 12px;
+  font-size: .9rem;
+}
+
+.section { padding: 66px 0; }
+
+.section-white { background: white; }
+
+.section-heading {
+  display: flex;
+  justify-content: space-between;
+  align-items: end;
+  gap: 20px;
+  margin-bottom: 28px;
+}
+
+h2 {
+  font-size: clamp(1.8rem, 4vw, 2.5rem);
+  line-height: 1.2;
+  color: var(--green-dark);
+  margin: 7px 0 10px;
+}
+
+h3 { line-height: 1.3; }
+
+.section-heading p, .muted { color: var(--muted); }
+
+.section-heading p { margin: 0; }
+
+.filters {
+  display: flex;
+  gap: 9px;
+  flex-wrap: wrap;
+  margin: 20px 0 24px;
+}
+
+.filter-button {
+  border: 1px solid var(--border);
+  border-radius: 30px;
+  padding: 9px 17px;
+  background: white;
+  color: var(--text);
+  font-weight: 700;
+}
+
+.filter-button:hover,
+.filter-button.active {
+  background: var(--green);
+  border-color: var(--green);
+  color: white;
+}
+
+.trail-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 24px;
+}
+
+.trail-card {
+  background: white;
+  border: 1px solid var(--border);
+  border-radius: 14px;
+  overflow: hidden;
+  box-shadow: var(--shadow);
+  display: flex;
+  flex-direction: column;
+  min-width: 0;
+}
+
+.trail-card img {
+  width: 100%;
+  height: 210px;
+  object-fit: cover;
+  background: var(--green-light);
+}
+
+.card-content {
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  flex: 1;
+}
+
+.card-content h3 {
+  font-size: 1.22rem;
+  margin: 10px 0 7px;
+}
+
+.card-content p {
+  color: var(--muted);
+  margin: 0 0 16px;
+}
+
+.card-content .button { margin-top: auto; }
+
+.tag {
+  display: inline-block;
+  border-radius: 30px;
+  padding: 4px 10px;
+  background: var(--green-light);
+  color: var(--green-dark);
+  font-size: .78rem;
+  font-weight: 800;
+}
+
+.tag.moderate { background: #fff0d8; color: #80551c; }
+.tag.hard { background: #f9e2de; color: #943d32; }
+
+.card-meta {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 9px 15px;
+  font-size: .88rem;
+  margin: 0 0 17px;
+  color: var(--muted);
+}
+
+.empty-state {
+  padding: 35px;
+  background: white;
+  border-radius: 12px;
+  text-align: center;
+  color: var(--muted);
+}
+
+.stats {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 16px;
+  margin-top: 32px;
+}
+
+.stat {
+  background: white;
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  padding: 20px;
+  text-align: center;
+}
+
+.stat strong {
+  display: block;
+  color: var(--green);
+  font-size: 1.8rem;
+}
+
+.two-columns {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 35px;
+  align-items: center;
+}
+
+.feature-image {
+  width: 100%;
+  height: 370px;
+  object-fit: cover;
+  border-radius: 15px;
+}
+
+.check-list {
+  list-style: none;
+  padding: 0;
+}
+
+.check-list li { margin: 13px 0; }
+
+.check-list li::before {
+  content: "✓";
+  color: var(--green);
+  font-weight: 900;
+  margin-right: 10px;
+}
+
+.panel {
+  background: white;
+  border: 1px solid var(--border);
+  border-radius: 14px;
+  padding: 25px;
+  box-shadow: var(--shadow);
+}
+
+.premium-panel {
+  background: var(--green-dark);
+  color: white;
+  border-radius: 16px;
+  padding: 34px;
+}
+
+.premium-panel h2,
+.premium-panel h3 { color: white; }
+
+.premium-panel p { color: #e1ebe2; }
+
+.premium-price {
+  font-size: 2.3rem;
+  font-weight: 800;
+  margin: 12px 0;
+}
+
+.premium-price small {
+  font-size: .95rem;
+  font-weight: 400;
+}
+
+.partner-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 20px;
+}
+
+.partner-card {
+  border: 1px solid var(--border);
+  background: white;
+  border-radius: 12px;
+  padding: 22px;
+}
+
+.partner-icon {
+  font-size: 2rem;
+  margin-bottom: 8px;
+}
+
+.ad-label {
+  display: inline-block;
+  background: #f0f1ed;
+  color: #60695f;
+  border-radius: 4px;
+  font-size: .72rem;
+  font-weight: 800;
+  padding: 3px 7px;
+  margin-bottom: 9px;
+}
+
+.guide-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 20px;
+}
+
+.guide-card {
+  background: white;
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  padding: 23px;
+}
+
+.guide-avatar {
+  width: 58px;
+  height: 58px;
+  border-radius: 50%;
+  background: var(--green-light);
+  display: grid;
+  place-items: center;
+  font-size: 1.6rem;
+}
+
+.guide-card h3 { margin-bottom: 5px; }
+
+.guide-card p { color: var(--muted); }
+
+.form-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 16px;
+}
+
+.field {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.field.full { grid-column: 1 / -1; }
+
+.field label { font-weight: 700; font-size: .9rem; }
+
+.field input,
+.field select,
+.field textarea {
+  width: 100%;
+  padding: 11px 12px;
+  border: 1px solid #cfd8ce;
+  border-radius: 7px;
+  background: white;
+  color: var(--text);
+}
+
+.field input:focus,
+.field select:focus,
+.field textarea:focus {
+  outline: 2px solid #9bbca5;
+  border-color: var(--green);
+}
+
+.field textarea {
+  min-height: 100px;
+  resize: vertical;
+}
+
+.notice {
+  background: var(--green-light);
+  padding: 15px;
+  border-radius: 8px;
+  font-size: .92rem;
+  margin: 16px 0;
+}
+
+.notice.warning {
+  background: #fff1df;
+}
+
+.review-list {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 16px;
+  margin: 22px 0;
+}
+
+.review-card {
+  background: white;
+  border: 1px solid var(--border);
+  border-radius: 10px;
+  padding: 18px;
+  overflow-wrap: anywhere;
+}
+
+.stars {
+  color: #d68b21;
+  letter-spacing: 2px;
+}
+
+.back-link {
+  display: inline-block;
+  margin-bottom: 22px;
+  color: var(--green);
+  font-weight: 700;
+}
+
+.detail-layout {
+  display: grid;
+  grid-template-columns: 1.5fr 1fr;
+  gap: 28px;
+  align-items: start;
+}
+
+.detail-image {
+  width: 100%;
+  max-height: 430px;
+  object-fit: cover;
+  border-radius: 14px;
+}
+
+.detail-facts {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 10px;
+  margin: 20px 0;
+}
+
+.fact {
+  background: var(--green-light);
+  border-radius: 9px;
+  padding: 13px;
+}
+
+.fact small {
+  display: block;
+  color: var(--muted);
+}
+
+.fact strong { color: var(--green-dark); }
+
+footer {
+  background: #173e2e;
+  color: white;
+  padding: 35px 0;
+}
+
+.footer-content {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 20px;
+  flex-wrap: wrap;
+}
+
+footer p { color: #d7e2d8; margin: 6px 0; }
+
+footer a { text-decoration: underline; }
+
+hr { border: 0; border-top: 1px solid var(--border); margin: 24px 0; }
+
+.hidden { display: none !important; }
+
+#page-content { min-height: 60vh; }
+
+@media (max-width: 850px) {
+  .trail-grid, .partner-grid, .guide-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .two-columns, .detail-layout { grid-template-columns: 1fr; }
+
+  .nav { flex-wrap: wrap; }
+
+  .nav-links { gap: 12px; }
+}
+
+@media (max-width: 580px) {
+  .menu-button { display: block; }
+
+  .nav-links {
+    display: none;
+    width: 100%;
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 12px 0;
+  }
+
+  .nav-links.open { display: flex; }
+
+  .hero { min-height: 400px; }
+
+  .trail-grid, .partner-grid, .guide-grid,
+  .review-list, .stats { grid-template-columns: 1fr; }
+
+  .section { padding: 45px 0; }
+
+  .section-heading {
+    align-items: flex-start;
+    flex-direction: column;
+  }
+
+  .form-grid { grid-template-columns: 1fr; }
+
+  .field.full { grid-column: auto; }
+
+  .detail-facts { grid-template-columns: 1fr 1fr; }
+
+  .premium-panel { padding: 24px; }
 }
 </style>
 </head>
+
 <body>
+
 <header>
-  <a href="#" class="logo" style="color:white;text-decoration:none">🌿 EcoTrail Montenegro</a>
-  <nav>
-    <a href="#home">Home</a>
-    <a href="#trails">Trails</a>
-    <a href="#guides">Local guides</a>
-    <a href="#about">About</a>
+  <nav class="nav">
+    <a class="logo" href="#home">EcoTrail<span>.</span> Montenegro</a>
+
+    <button class="menu-button" id="menu-button" aria-label="Toggle navigation">☰ Menu</button>
+
+    <div class="nav-links" id="nav-links">
+      <a href="#home">Home</a>
+      <a href="#trails">Trails</a>
+      <a href="#guides">Guides</a>
+      <a href="#community">Community</a>
+      <a href="#premium">Premium GPS</a>
+      <a href="#partners">Local Partners</a>
+      <a href="#booking">Book a Guide</a>
+    </div>
   </nav>
 </header>
 
-<main id="app"></main>
+<main id="page-content"></main>
 
 <footer>
-  <p><strong>🌿 EcoTrail Montenegro</strong></p>
-  <p>Explore responsibly. Discover locally. Leave no trace.</p>
-  <p>Student project · Montenegro</p>
+  <div class="container footer-content">
+    <div>
+      <a class="logo" href="#home" style="color:white">EcoTrail<span>.</span> Montenegro</a>
+      <p>Explore nature. Respect the outdoors. Connect with others.</p>
+    </div>
+    <div>
+      <a href="#privacy">Privacy information</a>
+      <p>School project prototype · No real payments</p>
+    </div>
+  </div>
 </footer>
 
 <script>
+/* ==========================================
+   ECOTRAIL MONTENEGRO
+   Main website data
+========================================== */
+
 const trails = [
-{
- id:"black-lake",name:"Black Lake Loop",place:"Žabljak · Durmitor National Park",
- emoji:"🏞️",level:"Easy",distance:"3.5 km",duration:"1–1.5 hours",season:"Spring–autumn",
- intro:"A peaceful walk around the famous glacial lake, surrounded by dense pine forest and dramatic mountain scenery.",
- description:"Black Lake, known locally as Crno Jezero, is one of Montenegro's best-known natural attractions. The loop is a lovely introduction to Durmitor, with forest paths, lake views and plenty of places to pause and enjoy the scenery.",
- highlights:["Beautiful reflections of the surrounding mountains","Pine forest and fresh mountain air","Great for beginners and families","Photography and picnic opportunities"],
- tips:["Wear comfortable walking shoes.","Bring water and take your rubbish with you.","Stay on marked paths and respect wildlife.","Mountain weather can change quickly."]
-},
-{
- id:"kotor-fortress",name:"Kotor Fortress Trail",place:"Kotor Old Town · Bay of Kotor",
- emoji:"🏰",level:"Moderate",distance:"Approx. 4.5 km return",duration:"2–3 hours",season:"Spring–autumn",
- intro:"Climb above the medieval rooftops of Kotor for spectacular views of the bay and surrounding mountains.",
- description:"This historic uphill route follows stone steps and paths above Kotor's Old Town. The climb is steep in places, but the panoramic views over the red rooftops and blue bay make it memorable.",
- highlights:["Panoramic views of the Bay of Kotor","Historic fortifications and stone paths","A unique mix of culture and nature","Wonderful early-morning photography"],
- tips:["Start early to avoid heat and crowds.","Carry water; much of the climb is exposed.","Wear shoes with good grip.","Check access conditions and any entrance fees before visiting."]
-},
-{
- id:"bobotov-kuk",name:"Bobotov Kuk Adventure",place:"Durmitor National Park",
- emoji:"⛰️",level:"Difficult",distance:"Approx. 10–12 km return",duration:"6–8 hours",season:"Summer, conditions permitting",
- intro:"A challenging high-mountain adventure toward one of Durmitor's most famous peaks.",
- description:"Bobotov Kuk is a demanding mountain objective for experienced hikers. The terrain can be rocky and exposed, and conditions change rapidly. This route should only be attempted with suitable preparation and reliable local information.",
- highlights:["Impressive limestone mountain landscapes","High-altitude views across Durmitor","A rewarding challenge for experienced hikers","Unique alpine plants and scenery"],
- tips:["Check the weather and trail conditions before departure.","Carry appropriate layers, food and plenty of water.","Do not attempt the route in poor weather.","Consider an experienced local mountain guide."]
-},
-{
- id:"biogradska-gora",name:"Biogradska Gora Forest Walk",place:"Biogradska Gora National Park",
- emoji:"🌲",level:"Easy",distance:"Approx. 3.5 km",duration:"1–2 hours",season:"Spring–autumn",
- intro:"Explore an ancient forest and enjoy a gentle walk beside the beautiful waters of Biogradsko Lake.",
- description:"Biogradska Gora protects one of Europe's remarkable old-growth forests. This gentle lakeside walk offers a relaxing way to discover native trees, peaceful woodland and the park's rich biodiversity.",
- highlights:["Lakeside scenery","Ancient forest and native plants","Birdwatching opportunities","A relaxed route suitable for many visitors"],
- tips:["Keep noise low to avoid disturbing wildlife.","Stay on marked trails.","Take all litter away with you.","Check park opening conditions before travelling."]
-},
-{
- id:"ladder-of-kotor",name:"Ladder of Kotor",place:"Kotor · Vrmac mountain slopes",
- emoji:"🥾",level:"Moderate–difficult",distance:"Varies by starting point",duration:"3–5 hours",season:"Spring–autumn",
- intro:"Follow historic zigzag paths above the bay and discover a different perspective on Montenegro's dramatic coast.",
- description:"The historic paths above Kotor wind up the mountainside through a series of bends and stone sections. The ascent is rewarding but can be strenuous, especially in the heat.",
- highlights:["Wide views over the Bay of Kotor","Historic mountain paths","Quiet scenery away from the waterfront","Excellent opportunities for landscape photography"],
- tips:["Begin early and avoid the hottest part of the day.","Bring enough water and sun protection.","Use sturdy shoes and watch your footing.","Research your chosen route and return plan in advance."]
-},
-{
- id:"lovcen",name:"Lovćen Forest Trail",place:"Lovćen National Park",
- emoji:"🌳",level:"Easy–moderate",distance:"Approx. 4 km",duration:"1.5–2.5 hours",season:"Spring–autumn",
- intro:"Discover mountain forest, fresh air and beautiful views in the heart of Lovćen National Park.",
- description:"This sample walking route introduces visitors to the forested landscapes of Lovćen. The park's mix of woodland, rocky terrain and mountain viewpoints makes it a rewarding destination for nature lovers.",
- highlights:["Mountain forest and fresh air","Local plant life and natural habitats","Peaceful walking away from busy towns","A good addition to a national park visit"],
- tips:["Check local trail signage and conditions.","Bring layers, as mountain temperatures can change.","Respect protected habitats.","Carry your rubbish back with you."]
-}
+  {
+    id: "black-lake",
+    name: "Black Lake Loop",
+    location: "Žabljak, Durmitor",
+    difficulty: "Easy",
+    distance: "3.5 km",
+    duration: "1–2 hours",
+    elevation: "Low",
+    image: "https://images.unsplash.com/photo-1470770841072-f978cf4d019e?auto=format&fit=crop&w=1000&q=80",
+    description: "A beautiful walk around the famous Black Lake, surrounded by forests and dramatic mountain scenery.",
+    tips: "Wear comfortable walking shoes, take water, and stay on marked paths. The weather can change quickly."
+  },
+  {
+    id: "kotor-fortress",
+    name: "Kotor Fortress Trail",
+    location: "Kotor",
+    difficulty: "Moderate",
+    distance: "2.5 km",
+    duration: "1.5–2.5 hours",
+    elevation: "High",
+    image: "https://images.unsplash.com/photo-1516483638261-f4dbaf036963?auto=format&fit=crop&w=1000&q=80",
+    description: "Climb the historic stone steps above Kotor for panoramic views of the old town and Bay of Kotor.",
+    tips: "Bring water, wear shoes with good grip, and avoid the hottest part of the day."
+  },
+  {
+    id: "bobotov-kuk",
+    name: "Bobotov Kuk",
+    location: "Durmitor National Park",
+    difficulty: "Hard",
+    distance: "10 km",
+    duration: "6–8 hours",
+    elevation: "Very high",
+    image: "https://images.unsplash.com/photo-1464822759023-fed622ff2c3b?auto=format&fit=crop&w=1000&q=80",
+    description: "A challenging high-mountain route for experienced hikers seeking dramatic views across Durmitor.",
+    tips: "Check weather and route conditions carefully. Appropriate equipment and mountain experience are essential."
+  },
+  {
+    id: "biogradska-gora",
+    name: "Biogradska Gora Walk",
+    location: "Biogradska Gora National Park",
+    difficulty: "Easy",
+    distance: "3.3 km",
+    duration: "1–1.5 hours",
+    elevation: "Low",
+    image: "https://images.unsplash.com/photo-1448375240586-882707db888b?auto=format&fit=crop&w=1000&q=80",
+    description: "Enjoy a peaceful woodland walk near a glacial lake in one of Montenegro's remarkable forest landscapes.",
+    tips: "Stay on designated trails, respect wildlife, and take any rubbish with you."
+  },
+  {
+    id: "ladder-of-kotor",
+    name: "Ladder of Kotor",
+    location: "Kotor hinterland",
+    difficulty: "Hard",
+    distance: "7 km",
+    duration: "3–5 hours",
+    elevation: "High",
+    image: "https://images.unsplash.com/photo-1464278533981-50106e6176b1?auto=format&fit=crop&w=1000&q=80",
+    description: "A steep historic mountain path with sweeping views of the bay and surrounding limestone peaks.",
+    tips: "Carry enough water, start early in warm weather, and be careful on exposed or loose sections."
+  },
+  {
+    id: "lovcen",
+    name: "Lovćen Forest Trail",
+    location: "Lovćen National Park",
+    difficulty: "Moderate",
+    distance: "5 km",
+    duration: "2–3 hours",
+    elevation: "Medium",
+    image: "https://images.unsplash.com/photo-1441974231531-c6227db76b6e?auto=format&fit=crop&w=1000&q=80",
+    description: "Explore forest paths and mountain viewpoints in the beautiful landscapes of Lovćen National Park.",
+    tips: "Bring a light jacket, check local conditions, and follow park guidance."
+  }
 ];
 
 const guides = [
-{id:"milica",name:"Milica Vuković",emoji:"👩🏻‍🦱",specialty:"Nature & ecology",languages:"Montenegrin, English",bio:"Milica is a fictional eco-guide who loves sharing Montenegro's forests, plants and wildlife. Her tours focus on low-impact travel and protecting natural habitats."},
-{id:"marko",name:"Marko Petrović",emoji:"🧔🏻",specialty:"Mountain hiking",languages:"Montenegrin, English, Serbian",bio:"Marko is a fictional hiking guide with a passion for mountain landscapes. He helps visitors understand trail preparation, mountain safety and responsible hiking."},
-{id:"ana",name:"Ana Radović",emoji:"👩🏻",specialty:"Culture & local heritage",languages:"Montenegrin, English",bio:"Ana is a fictional local guide who combines outdoor walks with stories about Montenegro's historic towns, traditions and communities."}
+  {
+    id: "milica",
+    name: "Milica Vuković",
+    specialty: "Nature and beginner-friendly walks",
+    location: "Žabljak",
+    description: "Enjoys helping new hikers discover Montenegro's forests, lakes, and local nature."
+  },
+  {
+    id: "marko",
+    name: "Marko Petrović",
+    specialty: "Mountain hiking",
+    location: "Durmitor",
+    description: "Focuses on mountain routes, preparation, and responsible outdoor exploration."
+  },
+  {
+    id: "ana",
+    name: "Ana Radović",
+    specialty: "Coastal and cultural trails",
+    location: "Kotor",
+    description: "Combines coastal scenery, historic routes, and local stories."
+  }
 ];
 
-const app = document.getElementById("app");
+const sampleReviews = [
+  {
+    trailId: "black-lake",
+    name: "Alex",
+    rating: 5,
+    comment: "Beautiful scenery and a relaxing walk. Great for a day outdoors!"
+  },
+  {
+    trailId: "biogradska-gora",
+    name: "Sam",
+    rating: 4,
+    comment: "Peaceful forest and lovely nature. Bring a camera."
+  },
+  {
+    trailId: "kotor-fortress",
+    name: "Taylor",
+    rating: 5,
+    comment: "The views are incredible. Wear comfortable shoes for the steps."
+  }
+];
 
-function trailCard(t){
- return `<article class="card">
-   <div class="card-top">${t.emoji}</div>
-   <div class="card-content">
-     <h3>${t.name}</h3>
-     <p>${t.intro}</p>
-     <div class="tags"><span class="tag">${t.level}</span><span class="tag">${t.distance}</span></div>
-     <a class="button" href="#trail/${t.id}">View trail details →</a>
-   </div>
- </article>`;
+/* ==========================================
+   BASIC HELPERS
+========================================== */
+
+const app = document.getElementById("page-content");
+
+function escapeHTML(value) {
+  return String(value ?? "").replace(/[&<>"']/g, char => ({
+    "&": "&amp;",
+    "<": "&lt;",
+    ">": "&gt;",
+    '"': "&quot;",
+    "'": "&#039;"
+  })[char]);
 }
 
-function homePage(){
- return `
- <section class="hero" id="home">
-   <p>YOUR OUTDOOR COMMUNITY IN MONTENEGRO</p>
-   <h1>Find your path. Protect your place.</h1>
-   <p>Discover Montenegro's lakes, forests, mountains and historic paths. Plan your next adventure while travelling responsibly and supporting local communities.</p>
-   <a class="button" href="#trails">Explore the trails ↓</a>
- </section>
- <section id="trails">
-   <div class="section-heading"><h2>Explore the trails</h2><p>Find an adventure that matches your interests and experience.</p></div>
-   <div class="cards">${trails.map(trailCard).join("")}</div>
- </section>
- <section class="about" id="about">
-   <div class="section-heading"><h2>Travel gently. Discover more.</h2><p>EcoTrail Montenegro encourages responsible outdoor tourism.</p></div>
-   <div class="about-grid">
-     <div><h3>🌱 Protect nature</h3><p>Stay on marked trails, respect wildlife and leave natural places as you found them.</p></div>
-     <div><h3>🤝 Support local people</h3><p>Discover local guides, small businesses and the stories behind each destination.</p></div>
-     <div><h3>🥾 Be prepared</h3><p>Choose routes that suit your ability and check the weather before setting out.</p></div>
-   </div>
- </section>
- <section id="guides">
-   <div class="section-heading"><h2>Meet our local guides</h2><p>Meet our fictional guide profiles and explore their specialities.</p></div>
-   <div class="guide-list">${guides.map(g=>`<article class="guide"><div class="avatar">${g.emoji}</div><h3>${g.name}</h3><p>${g.specialty}</p><p>${g.bio}</p><a class="button" href="#guide/${g.id}">View guide →</a></article>`).join("")}</div>
- </section>`;
+function getStoredReviews() {
+  try {
+    const stored = localStorage.getItem("ecotrail-reviews");
+    return stored ? JSON.parse(stored) : [];
+  } catch {
+    return [];
+  }
 }
 
-function trailPage(t){
- return `<section class="page">
- <a class="back" href="#trails">← Back to all trails</a>
- <div class="detail-hero"><div class="emoji">${t.emoji}</div><p>${t.place}</p><h1>${t.name}</h1><p>${t.intro}</p>
- <div class="facts">
-   <div class="fact"><strong>Difficulty</strong>${t.level}</div>
-   <div class="fact"><strong>Distance</strong>${t.distance}</div>
-   <div class="fact"><strong>Duration</strong>${t.duration}</div>
-   <div class="fact"><strong>Best season</strong>${t.season}</div>
- </div></div>
- <div class="detail-grid"><div>
-   <article class="panel"><h2>About this trail</h2><p>${t.description}</p></article>
-   <article class="panel"><h2>Trail highlights</h2><ul>${t.highlights.map(x=>`<li>${x}</li>`).join("")}</ul></article>
-   <article class="panel"><h2>Responsible hiking tips</h2><ul>${t.tips.map(x=>`<li>${x}</li>`).join("")}</ul></article>
- </div><aside>
-   <article class="panel"><h2>Explore with a guide</h2><p>Want to learn more about the area? View our guide profiles or send a demo booking request.</p><a class="button" href="#guides">Meet the guides</a></article>
-   <article class="panel"><h3>Plan your visit</h3><p>Check local conditions, weather, access restrictions and any park fees before you leave.</p><button class="button" onclick="openBooking('${t.id}')">Request a tour</button></article>
- </aside></div></section>`;
+function getAllReviews() {
+  return [...sampleReviews, ...getStoredReviews()];
 }
 
-function guidePage(g){
- return `<section class="page">
- <a class="back" href="#guides">← Back to all guides</a>
- <article class="detail-hero"><div class="emoji">${g.emoji}</div><h1>${g.name}</h1><p>${g.specialty}</p><div class="facts"><div class="fact"><strong>Speciality</strong>${g.specialty}</div><div class="fact"><strong>Languages</strong>${g.languages}</div><div class="fact"><strong>Profile</strong>Fictional demo guide</div></div></article>
- <article class="panel"><h2>About the guide</h2><p>${g.bio}</p><p class="notice">This is a school project. The guide profiles are fictional and tours are not actually bookable.</p><button class="button" onclick="openBooking('')">Send a demo tour request</button></article>
- </section>`;
+function getTrail(id) {
+  return trails.find(trail => trail.id === id);
 }
 
-function bookingPage(){
- return `<section class="page"><a class="back" href="#trails">← Back to trails</a><div class="panel"><h1>Tour request</h1><p>This is a demonstration form for the EcoTrail Montenegro school project.</p><form id="bookingForm"><label for="visitor">Your name</label><input id="visitor" required placeholder="Enter your name"><label for="email">Email address</label><input id="email" type="email" required placeholder="you@example.com"><label for="tour">Preferred trail</label><select id="tour">${trails.map(t=>`<option value="${t.id}">${t.name}</option>`).join("")}</select><label for="message">Additional notes</label><textarea id="message" placeholder="Tell us about your plans"></textarea><button class="button" type="submit">Submit demo request</button></form><p id="formMessage" role="status"></p></div></section>`;
+function getGuide(id) {
+  return guides.find(guide => guide.id === id);
 }
 
-function openBooking(id){
- location.hash = "booking" + (id ? "/" + id : "");
+function stars(rating) {
+  return '<span class="stars" aria-label="' + rating + ' out of 5 stars">' +
+    "★".repeat(rating) + "☆".repeat(5 - rating) +
+    "</span>";
 }
 
-function render(){
- const hash = decodeURIComponent(location.hash.slice(1) || "home");
- const parts = hash.split("/");
- if(parts[0] === "trail" && parts[1]){
-   const t = trails.find(x=>x.id === parts[1]);
-   app.innerHTML = t ? trailPage(t) : homePage();
- }else if(parts[0] === "guide" && parts[1]){
-   const g = guides.find(x=>x.id === parts[1]);
-   app.innerHTML = g ? guidePage(g) : homePage();
- }else if(parts[0] === "booking"){
-   app.innerHTML = bookingPage();
-   const select = document.getElementById("tour");
-   if(parts[1] && select) select.value = parts[1];
-   document.getElementById("bookingForm").addEventListener("submit",function(e){
-     e.preventDefault();
-     document.getElementById("formMessage").textContent = "Thank you! This is a demo form, so your request has not actually been sent.";
-   });
- }else{
-   app.innerHTML = homePage();
- }
- window.scrollTo(0,0);
+function difficultyTag(difficulty) {
+  const className = difficulty.toLowerCase();
+  return '<span class="tag ' + className + '">' +
+    escapeHTML(difficulty) + '</span>';
 }
 
-window.addEventListener("hashchange",render);
-render();
+function trailAverageRating(trailId) {
+  const reviews = getAllReviews().filter(review => review.trailId === trailId);
+  if (!reviews.length) return null;
+  return (reviews.reduce((sum, review) => sum + Number(review.rating), 0) / reviews.length).toFixed(1);
+}
+
+function trailCard(trail) {
+  const rating = trailAverageRating(trail.id);
+
+  return `
+    <article class="trail-card">
+      <img src="${escapeHTML(trail.image)}"
+           alt="${escapeHTML(trail.name)}"
+           loading="lazy"
+           onerror="this.style.display='none'">
+
+      <div class="card-content">
+        ${difficultyTag(trail.difficulty)}
+        <h3>${escapeHTML(trail.name)}</h3>
+        <div class="card-meta">
+          <span>📍 ${escapeHTML(trail.location)}</span>
+          <span>🥾 ${escapeHTML(trail.distance)}</span>
+          <span>⏱ ${escapeHTML(trail.duration)}</span>
+        </div>
+        <p>${escapeHTML(trail.description)}</p>
+        ${rating ? `<p>★ ${rating} / 5 community rating</p>` : ""}
+        <a class="button button-outline" href="#trail/${trail.id}">Explore Trail →</a>
+      </div>
+    </article>
+  `;
+}
+
+function renderTrailCards(list) {
+  if (!list.length) {
+    return '<div class="empty-state">No trails match this difficulty. Try another filter.</div>';
+  }
+  return '<div class="trail-grid">' + list.map(trailCard).join("") + '</div>';
+}
+
+/* ==========================================
+   HOME PAGE + DIFFICULTY FILTERS
+========================================== */
+
+function renderHome() {
+  app.innerHTML = `
+    <section class="hero">
+      <div class="container">
+        <div class="hero-content">
+          <div class="eyebrow">Discover Montenegro</div>
+          <h1>Find your path.<br>Protect our nature.</h1>
+          <p>Discover beautiful hiking trails, connect with fellow outdoor enthusiasts, and explore Montenegro responsibly.</p>
+          <a class="button button-light" href="#trails">Explore the trails →</a>
+          <a class="button" href="#community" style="margin-left:8px">Join the community</a>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="featured-trails">
+      <div class="container">
+        <div class="section-heading">
+          <div>
+            <div class="eyebrow">Your next adventure</div>
+            <h2>Explore the trails</h2>
+            <p>Choose a route that matches your experience and interests.</p>
+          </div>
+          <a class="button button-outline" href="#trails">View all trails →</a>
+        </div>
+
+        <div class="filters" id="difficulty-filters" aria-label="Filter trails by difficulty">
+          <button class="filter-button active" data-difficulty="All" aria-pressed="true">All trails</button>
+          <button class="filter-button" data-difficulty="Easy" aria-pressed="false">Easy</button>
+          <button class="filter-button" data-difficulty="Moderate" aria-pressed="false">Moderate</button>
+          <button class="filter-button" data-difficulty="Hard" aria-pressed="false">Hard</button>
+        </div>
+
+        <div id="trail-results">${renderTrailCards(trails)}</div>
+
+        <div class="stats">
+          <div class="stat"><strong>6</strong><span>Featured trails</span></div>
+          <div class="stat"><strong>3</strong><span>Difficulty levels</span></div>
+          <div class="stat"><strong>1</strong><span>Beautiful Montenegro</span></div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section section-white">
+      <div class="container two-columns">
+        <div>
+          <div class="eyebrow">Travel responsibly</div>
+          <h2>Leave only footprints</h2>
+          <p>Outdoor adventures are better when we protect the places we love. EcoTrail encourages hikers to respect wildlife, follow marked paths, and leave natural spaces clean.</p>
+          <ul class="check-list">
+            <li>Take all rubbish home with you.</li>
+            <li>Respect wildlife and local communities.</li>
+            <li>Check weather and trail conditions before setting off.</li>
+            <li>Stay on marked trails and follow park rules.</li>
+          </ul>
+          <a href="#privacy" class="button">Our responsible outdoor principles</a>
+        </div>
+        <img class="feature-image"
+             src="https://images.unsplash.com/photo-1472396961693-142e6e269027?auto=format&fit=crop&w=1000&q=80"
+             alt="A natural forest landscape"
+             loading="lazy">
+      </div>
+    </section>
+
+    ${premiumPreview()}
+    ${partnerPreview()}
+  `;
+
+  document.querySelectorAll("[data-difficulty]").forEach(button => {
+    button.addEventListener("click", () => {
+      const selected = button.dataset.difficulty;
+
+      document.querySelectorAll("[data-difficulty]").forEach(item => {
+        const active = item === button;
+        item.classList.toggle("active", active);
+        item.setAttribute("aria-pressed", String(active));
+      });
+
+      const filtered = selected === "All"
+        ? trails
+        : trails.filter(trail => trail.difficulty === selected);
+
+      document.getElementById("trail-results").innerHTML = renderTrailCards(filtered);
+    });
+  });
+}
+
+/* ==========================================
+   ALL TRAILS PAGE
+========================================== */
+
+function renderTrailsPage() {
+  app.innerHTML = `
+    <section class="section">
+      <div class="container">
+        <a class="back-link" href="#home">← Back to home</a>
+        <div class="eyebrow">Find your next adventure</div>
+        <h2>All hiking trails</h2>
+        <p class="muted">Filter trails by difficulty to find a route that suits you.</p>
+
+        <div class="filters" id="all-trail-filters">
+          <button class="filter-button active" data-all-difficulty="All" aria-pressed="true">All trails</button>
+          <button class="filter-button" data-all-difficulty="Easy" aria-pressed="false">Easy</button>
+          <button class="filter-button" data-all-difficulty="Moderate" aria-pressed="false">Moderate</button>
+          <button class="filter-button" data-all-difficulty="Hard" aria-pressed="false">Hard</button>
+        </div>
+
+        <div id="all-trail-results">${renderTrailCards(trails)}</div>
+      </div>
+    </section>
+  `;
+
+  document.querySelectorAll("[data-all-difficulty]").forEach(button => {
+    button.addEventListener("click", () => {
+      const selected = button.dataset.allDifficulty;
+
+      document.querySelectorAll("[data-all-difficulty]").forEach(item => {
+        const active = item === button;
+        item.classList.toggle("active", active);
+        item.setAttribute("aria-pressed", String(active));
+      });
+
+      const filtered = selected === "All"
+        ? trails
+        : trails.filter(trail => trail.difficulty === selected);
+
+      document.getElementById("all-trail-results").innerHTML = renderTrailCards(filtered);
+    });
+  });
+}
+
+/* ==========================================
+   TRAIL DETAIL PAGE + USER REVIEWS
+========================================== */
+
+function renderTrailDetail(id) {
+  const trail = getTrail(id);
+
+  if (!trail) {
+    renderNotFound();
+    return;
+  }
+
+  const reviews = getAllReviews().filter(review => review.trailId === id);
+  const average = trailAverageRating(id);
+
+  app.innerHTML = `
+    <section class="section">
+      <div class="container">
+        <a class="back-link" href="#trails">← All trails</a>
+
+        <div class="detail-layout">
+          <div>
+            <img class="detail-image"
+                 src="${escapeHTML(trail.image)}"
+                 alt="${escapeHTML(trail.name)}"
+                 onerror="this.style.display='none'">
+
+            <div class="detail-facts">
+              <div class="fact"><small>Difficulty</small><strong>${escapeHTML(trail.difficulty)}</strong></div>
+              <div class="fact"><small>Distance</small><strong>${escapeHTML(trail.distance)}</strong></div>
+              <div class="fact"><small>Duration</small><strong>${escapeHTML(trail.duration)}</strong></div>
+            </div>
+
+            <div class="panel">
+              <div class="eyebrow">About this route</div>
+              <h2>${escapeHTML(trail.name)}</h2>
+              <p>📍 ${escapeHTML(trail.location)}</p>
+              <p>${escapeHTML(trail.description)}</p>
+              <h3>Hiking tips</h3>
+              <p>${escapeHTML(trail.tips)}</p>
+              <div class="notice warning">Trail information is provided as a project demonstration. Check current local conditions and official park guidance before hiking.</div>
+              <a class="button" href="#booking">Book a guide →</a>
+              <a class="button button-outline" href="#premium">Explore GPS options</a>
+            </div>
+          </div>
+
+          <aside class="panel">
+            <div class="eyebrow">Community feedback</div>
+            <h3>Trail reviews</h3>
+            ${average ? `<p>${stars(Math.round(Number(average)))} <strong>${average}/5</strong> average rating</p>` : `<p class="muted">Be the first to rate this trail.</p>`}
+            <p class="muted">${reviews.length} review(s)</p>
+            <a class="button button-outline" href="#community">Write a review →</a>
+            <hr>
+            <h3>About the difficulty</h3>
+            <p class="muted">Difficulty levels are general guidance. Actual conditions can change with weather, season, and trail maintenance.</p>
+          </aside>
+        </div>
+
+        <div style="margin-top:32px">
+          <h2>What hikers say</h2>
+          ${renderReviews(reviews)}
+        </div>
+      </div>
+    </section>
+  `;
+}
+
+function renderReviews(reviews) {
+  if (!reviews.length) {
+    return '<div class="empty-state">There are no reviews for this trail yet. You can be the first!</div>';
+  }
+
+  return '<div class="review-list">' + reviews.map(review => `
+    <article class="review-card">
+      ${stars(Number(review.rating))}
+      <h3>${escapeHTML(review.name)}</h3>
+      <p>${escapeHTML(review.comment)}</p>
+    </article>
+  `).join("") + '</div>';
+}
+
+/* ==========================================
+   COMMUNITY PAGE + REVIEW SUBMISSION
+========================================== */
+
+function renderCommunity() {
+  app.innerHTML = `
+    <section class="section">
+      <div class="container">
+        <div class="eyebrow">Share your adventure</div>
+        <h2>Outdoor community</h2>
+        <p class="muted">Read experiences from fellow hikers and share your own trail review.</p>
+
+        <div class="two-columns" style="align-items:start">
+          <div class="panel">
+            <h3>Write a trail review</h3>
+            <form id="review-form" class="form-grid">
+              <div class="field full">
+                <label for="review-name">Your display name</label>
+                <input id="review-name" name="name" maxlength="40" required placeholder="e.g. Alex">
+              </div>
+
+              <div class="field full">
+                <label for="review-trail">Choose a trail</label>
+                <select id="review-trail" name="trailId" required>
+                  ${trails.map(trail => `<option value="${trail.id}">${escapeHTML(trail.name)}</option>`).join("")}
+                </select>
+              </div>
+
+              <div class="field full">
+                <label for="review-rating">Your rating</label>
+                <select id="review-rating" name="rating" required>
+                  <option value="5">★★★★★ — Excellent</option>
+                  <option value="4">★★★★☆ — Very good</option>
+                  <option value="3">★★★☆☆ — Good</option>
+                  <option value="2">★★☆☆☆ — Fair</option>
+                  <option value="1">★☆☆☆☆ — Poor</option>
+                </select>
+              </div>
+
+              <div class="field full">
+                <label for="review-comment">Your review</label>
+                <textarea id="review-comment" name="comment" maxlength="500" required placeholder="Share what you enjoyed or what other hikers should know..."></textarea>
+              </div>
+
+              <div class="field full">
+                <button class="button" type="submit">Submit review</button>
+              </div>
+            </form>
+            <p id="review-message" role="status" class="muted"></p>
+            <div class="notice">Demo feature: reviews are stored in this browser only. They are not published to a shared online database.</div>
+          </div>
+
+          <div>
+            <h3>Community reviews</h3>
+            <div id="community-reviews">${renderReviews(getAllReviews().slice().reverse())}</div>
+          </div>
+        </div>
+      </div>
+    </section>
+  `;
+
+  document.getElementById("review-form").addEventListener("submit", event => {
+    event.preventDefault();
+
+    const formData = new FormData(event.target);
+    const name = String(formData.get("name") || "").trim();
+    const trailId = String(formData.get("trailId") || "");
+    const rating = Number(formData.get("rating"));
+    const comment = String(formData.get("comment") || "").trim();
+
+    if (!name || !getTrail(trailId) || rating < 1 || rating > 5 || !comment) {
+      document.getElementById("review-message").textContent = "Please complete all fields.";
+      return;
+    }
+
+    const newReview = { name, trailId, rating, comment };
+
+    try {
+      const stored = getStoredReviews();
+      stored.push(newReview);
+      localStorage.setItem("ecotrail-reviews", JSON.stringify(stored));
+
+      document.getElementById("review-message").textContent = "Thank you! Your review has been saved in this browser.";
+      event.target.reset();
+      document.getElementById("community-reviews").innerHTML =
+        renderReviews(getAllReviews().slice().reverse());
+    } catch {
+      document.getElementById("review-message").textContent =
+        "Your browser could not save the review. You can still explore the sample reviews.";
+    }
+  });
+}
+
+/* ==========================================
+   GUIDES PAGE
+========================================== */
+
+function renderGuides() {
+  app.innerHTML = `
+    <section class="section">
+      <div class="container">
+        <div class="eyebrow">Explore with confidence</div>
+        <h2>Meet our local guides</h2>
+        <p class="muted">Sample guide profiles for the EcoTrail Montenegro prototype.</p>
+
+        <div class="guide-grid">
+          ${guides.map(guide => `
+            <article class="guide-card">
+              <div class="guide-avatar" aria-hidden="true">🥾</div>
+              <h3>${escapeHTML(guide.name)}</h3>
+              <p><strong>${escapeHTML(guide.specialty)}</strong></p>
+              <p>📍 ${escapeHTML(guide.location)}</p>
+              <p>${escapeHTML(guide.description)}</p>
+              <a class="button button-outline" href="#guide/${guide.id}">View profile →</a>
+            </article>
+          `).join("")}
+        </div>
+
+        <div class="notice warning">These are fictional sample profiles. They do not represent verified or available professional guides.</div>
+      </div>
+    </section>
+  `;
+}
+
+function renderGuideDetail(id) {
+  const guide = getGuide(id);
+
+  if (!guide) {
+    renderNotFound();
+    return;
+  }
+
+  app.innerHTML = `
+    <section class="section">
+      <div class="container">
+        <a class="back-link" href="#guides">← All guides</a>
+        <div class="panel" style="max-width:720px;margin:auto">
+          <div class="guide-avatar" aria-hidden="true">🥾</div>
+          <div class="eyebrow">Local guide profile</div>
+          <h2>${escapeHTML(guide.name)}</h2>
+          <p><strong>${escapeHTML(guide.specialty)}</strong></p>
+          <p>📍 ${escapeHTML(guide.location)}</p>
+          <p>${escapeHTML(guide.description)}</p>
+          <div class="notice">This is a fictional guide profile for a school project demonstration.</div>
+          <a class="button" href="#booking">Request a demo booking →</a>
+        </div>
+      </div>
+    </section>
+  `;
+}
+
+/* ==========================================
+   BOOKING DEMO
+========================================== */
+
+function renderBooking() {
+  app.innerHTML = `
+    <section class="section">
+      <div class="container">
+        <div class="eyebrow">Plan your adventure</div>
+        <h2>Book a hiking guide</h2>
+        <p class="muted">Choose a trail and a sample guide for a demonstration booking.</p>
+
+        <div class="panel" style="max-width:760px">
+          <form id="booking-form" class="form-grid">
+            <div class="field">
+              <label for="booking-name">Your name</label>
+              <input id="booking-name" name="name" required maxlength="80" placeholder="Your name">
+            </div>
+
+            <div class="field">
+              <label for="booking-email">Email address</label>
+              <input id="booking-email" name="email" type="email" required placeholder="you@example.com">
+            </div>
+
+            <div class="field">
+              <label for="booking-trail">Choose a trail</label>
+              <select id="booking-trail" name="trail" required>
+                ${trails.map(trail => `<option value="${trail.id}">${escapeHTML(trail.name)} — ${escapeHTML(trail.difficulty)}</option>`).join("")}
+              </select>
+            </div>
+
+            <div class="field">
+              <label for="booking-guide">Choose a guide</label>
+              <select id="booking-guide" name="guide" required>
+                ${guides.map(guide => `<option value="${guide.id}">${escapeHTML(guide.name)}</option>`).join("")}
+              </select>
+            </div>
+
+            <div class="field">
+              <label for="booking-date">Preferred date</label>
+              <input id="booking-date" name="date" type="date" required>
+            </div>
+
+            <div class="field">
+              <label for="booking-people">Group size</label>
+              <select id="booking-people" name="people">
+                <option value="1">1 person</option>
+                <option value="2" selected>2 people</option>
+                <option value="3">3 people</option>
+                <option value="4">4 people</option>
+                <option value="5">5 people</option>
+                <option value="6">6 people</option>
+              </select>
+            </div>
+
+            <div class="field full">
+              <label for="booking-notes">Additional notes (optional)</label>
+              <textarea id="booking-notes" name="notes" maxlength="400" placeholder="Any questions or preferences?"></textarea>
+            </div>
+
+            <div class="field full">
+              <button class="button" type="submit">Submit demo booking</button>
+            </div>
+          </form>
+
+          <div id="booking-result" role="status" aria-live="polite"></div>
+          <div class="notice warning">This form is a prototype only. It does not send emails, contact guides, reserve a real tour, or collect payment.</div>
+        </div>
+      </div>
+    </section>
+  `;
+
+  const dateInput = document.getElementById("booking-date");
+  dateInput.min = new Date().toLocaleDateString("en-CA");
+
+  document.getElementById("booking-form").addEventListener("submit", event => {
+    event.preventDefault();
+
+    const data = new FormData(event.target);
+    const trail = getTrail(String(data.get("trail")));
+    const guide = getGuide(String(data.get("guide")));
+
+    document.getElementById("booking-result").innerHTML = `
+      <div class="notice">
+        <h3>Demo booking created!</h3>
+        <p><strong>Name:</strong> ${escapeHTML(data.get("name"))}</p>
+        <p><strong>Trail:</strong> ${escapeHTML(trail?.name || "")}</p>
+        <p><strong>Guide:</strong> ${escapeHTML(guide?.name || "")}</p>
+        <p><strong>Date:</strong> ${escapeHTML(data.get("date"))}</p>
+        <p><strong>Group size:</strong> ${escapeHTML(data.get("people"))}</p>
+        <p>This is a sample confirmation. No actual reservation has been made.</p>
+      </div>
+    `;
+  });
+}
+
+/* ==========================================
+   PREMIUM GPS SUBSCRIPTION
+========================================== */
+
+function premiumPreview() {
+  return `
+    <section class="section">
+      <div class="container">
+        <div class="premium-panel">
+          <div class="eyebrow">Explore offline</div>
+          <h2>EcoTrail Premium GPS</h2>
+          <p>Plan ahead with a proposed subscription for downloadable trail files and offline route information.</p>
+          <div class="premium-price">€3.99 <small>/ month · proposed price</small></div>
+          <ul class="check-list">
+            <li>Downloadable GPS route files for supported trails.</li>
+            <li>Access to saved trail information while offline.</li>
+            <li>Convenient trip planning before leaving home.</li>
+          </ul>
+          <a class="button button-light" href="#premium">Discover Premium</a>
+          <p style="font-size:.85rem">Proposed service only. Offline map downloads and paid subscriptions are not activated in this prototype.</p>
+        </div>
+      </div>
+    </section>
+  `;
+}
+
+function renderPremium() {
+  app.innerHTML = `
+    <section class="section">
+      <div class="container two-columns">
+        <div>
+          <div class="eyebrow">A proposed paid feature</div>
+          <h2>EcoTrail Premium GPS</h2>
+          <p>Premium could offer outdoor enthusiasts the option to download GPS trail files and save route information for use when an internet connection is unavailable.</p>
+          <div class="premium-price">€3.99 <small>/ month · example price</small></div>
+          <ul class="check-list">
+            <li>Download supported GPS files for compatible navigation apps.</li>
+            <li>Save trail descriptions and preparation tips.</li>
+            <li>Plan routes before visiting remote areas.</li>
+          </ul>
+          <div class="notice warning">GPS files and a real subscription service have not been implemented. The price is an example for the school project.</div>
+          <button class="button" id="premium-demo-button">Try premium demo</button>
+          <p id="premium-demo-message" role="status" class="muted"></p>
+        </div>
+
+        <div class="panel">
+          <h3>Free vs. Premium</h3>
+          <hr>
+          <p>✓ <strong>Free:</strong> Browse trail descriptions and read reviews.</p>
+          <p>✓ <strong>Free:</strong> Explore guide profiles and sample listings.</p>
+          <p>★ <strong>Premium:</strong> Proposed downloadable GPS routes.</p>
+          <p>★ <strong>Premium:</strong> Proposed offline trail information.</p>
+          <p class="muted">A real paid service would need secure payment processing, subscription management, and clear cancellation terms.</p>
+        </div>
+      </div>
+    </section>
+  `;
+
+  document.getElementById("premium-demo-button").addEventListener("click", () => {
+    document.getElementById("premium-demo-message").textContent =
+      "This is a preview. No subscription has been started and no payment has been taken.";
+  });
+}
+
+/* ==========================================
+   LOCAL ADVERTISING PARTNERS
+========================================== */
+
+function partnerPreview() {
+  return `
+    <section class="section section-white">
+      <div class="container">
+        <div class="section-heading">
+          <div>
+            <div class="eyebrow">Supporting local businesses</div>
+            <h2>Local outdoor partners</h2>
+            <p>Discover sample listings for outdoor equipment and hiking essentials.</p>
+          </div>
+          <a class="button button-outline" href="#partners">View partners →</a>
+        </div>
+        ${partnerCards()}
+      </div>
+    </section>
+  `;
+}
+
+function partnerCards() {
+  const partners = [
+    {
+      icon: "🥾",
+      name: "Hiking Footwear",
+      type: "Footwear and socks",
+      description: "Example promotion for hiking boots, walking shoes, and comfortable outdoor socks."
+    },
+    {
+      icon: "🎒",
+      name: "Trail Essentials",
+      type: "Backpacks and equipment",
+      description: "Example promotion for backpacks, water bottles, trekking poles, and day-trip essentials."
+    },
+    {
+      icon: "🏕️",
+      name: "Outdoor Adventures",
+      type: "Camping equipment",
+      description: "Example promotion for camping equipment, rainwear, and outdoor accessories."
+    }
+  ];
+
+  return '<div class="partner-grid">' + partners.map(partner => `
+    <article class="partner-card">
+      <span class="ad-label">SAMPLE AD</span>
+      <div class="partner-icon" aria-hidden="true">${partner.icon}</div>
+      <h3>${partner.name}</h3>
+      <p><strong>${partner.type}</strong></p>
+      <p class="muted">${partner.description}</p>
+    </article>
+  `).join("") + '</div>';
+}
+
+function renderPartners() {
+  app.innerHTML = `
+    <section class="section">
+      <div class="container">
+        <div class="eyebrow">Advertising and partnerships</div>
+        <h2>Local outdoor partners</h2>
+        <p class="muted">A proposed way for EcoTrail to support local businesses and fund the platform.</p>
+        ${partnerCards()}
+
+        <div class="panel" style="margin-top:25px">
+          <h3>How targeted advertising could work</h3>
+          <p>With appropriate consent and privacy safeguards, a real EcoTrail service could show relevant outdoor equipment advertisements based on a visitor's stated interests, such as hiking or camping.</p>
+          <p>Local providers could pay for clearly labelled sponsored placements. Advertising would need to be transparent, and personal data should not be collected or used unnecessarily.</p>
+          <div class="notice warning">All advertisements above are fictional examples. No real shops have purchased advertising space.</div>
+        </div>
+      </div>
+    </section>
+  `;
+}
+
+/* ==========================================
+   PRIVACY INFORMATION
+========================================== */
+
+function renderPrivacy() {
+  app.innerHTML = `
+    <section class="section">
+      <div class="container">
+        <div class="eyebrow">Trust and transparency</div>
+        <h2>Privacy and responsible data use</h2>
+
+        <div class="panel">
+          <h3>Information in this prototype</h3>
+          <p>The review feature stores submitted reviews in local browser storage on the device being used. The demo booking form displays a confirmation on the page but does not send form data to a server.</p>
+
+          <h3>Personal data and advertising</h3>
+          <p>A real EcoTrail platform should explain what data it collects, why it collects it, how long it keeps it, and who can access it. Users should receive clear information about any activity data used to personalise advertisements.</p>
+
+          <h3>Privacy safeguards</h3>
+          <ul class="check-list">
+            <li>Collect only data that is necessary for the service.</li>
+            <li>Provide clear privacy information and appropriate choices.</li>
+            <li>Protect accounts, bookings, and stored information.</li>
+            <li>Use secure HTTPS connections and suitable access controls.</li>
+            <li>Follow applicable privacy laws, including GDPR where applicable.</li>
+          </ul>
+
+          <h3>Safety in the outdoors</h3>
+          <p>Trail information on this website is illustrative and should not replace official maps, current weather reports, or local safety advice.</p>
+        </div>
+      </div>
+    </section>
+  `;
+}
+
+function renderNotFound() {
+  app.innerHTML = `
+    <section class="section">
+      <div class="container">
+        <h2>Page not found</h2>
+        <p>Sorry, this page does not exist.</p>
+        <a class="button" href="#home">Return home</a>
+      </div>
+    </section>
+  `;
+}
+
+/* ==========================================
+   PAGE NAVIGATION
+========================================== */
+
+function renderPage() {
+  const route = window.location.hash.slice(1) || "home";
+  const parts = route.split("/");
+  const page = parts[0];
+  const id = parts[1];
+
+  document.getElementById("nav-links").classList.remove("open");
+
+  window.scrollTo({ top: 0, behavior: "auto" });
+
+  switch (page) {
+    case "home":
+      renderHome();
+      break;
+    case "trails":
+      renderTrailsPage();
+      break;
+    case "trail":
+      renderTrailDetail(id);
+      break;
+    case "guides":
+      renderGuides();
+      break;
+    case "guide":
+      renderGuideDetail(id);
+      break;
+    case "booking":
+      renderBooking();
+      break;
+    case "community":
+      renderCommunity();
+      break;
+    case "premium":
+      renderPremium();
+      break;
+    case "partners":
+      renderPartners();
+      break;
+    case "privacy":
+      renderPrivacy();
+      break;
+    default:
+      renderNotFound();
+  }
+}
+
+document.getElementById("menu-button").addEventListener("click", () => {
+  document.getElementById("nav-links").classList.toggle("open");
+});
+
+window.addEventListener("hashchange", renderPage);
+
+renderPage();
 </script>
+
 </body>
 </html>
