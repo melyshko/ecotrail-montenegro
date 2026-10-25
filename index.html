@@ -1,0 +1,395 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>EcoTrail Montenegro | Explore Naturally</title>
+<style>
+:root {
+  --green: #234b35;
+  --lime: #cce8a0;
+  --cream: #f7f7ef;
+  --text: #23352a;
+}
+* { box-sizing: border-box; }
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+  background: var(--cream);
+  color: var(--text);
+}
+header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px 7%;
+  background: white;
+}
+.logo { font-size: 21px; font-weight: bold; color: var(--green); }
+.logo span { color: #789e53; }
+nav a {
+  color: var(--green);
+  text-decoration: none;
+  margin-left: 22px;
+  font-size: 14px;
+}
+button, select, input { font: inherit; }
+.hero {
+  background: linear-gradient(90deg, #173b2bdc, #173b2b35),
+  url("https://images.unsplash.com/photo-1519681393784-d120267933ba?auto=format&fit=crop&w=1800&q=85") center/cover;
+  min-height: 440px;
+  padding: 90px 8%;
+  color: white;
+  display: flex;
+  align-items: center;
+}
+.hero-content { max-width: 620px; }
+.eyebrow {
+  text-transform: uppercase;
+  letter-spacing: 3px;
+  font-size: 12px;
+  color: var(--lime);
+  font-weight: bold;
+}
+h1 { font-size: clamp(38px, 6vw, 66px); line-height: 1.05; margin: 18px 0; }
+.hero p { line-height: 1.8; max-width: 480px; }
+.primary {
+  background: var(--lime);
+  color: var(--green);
+  border: 0;
+  padding: 14px 22px;
+  border-radius: 7px;
+  font-weight: bold;
+  cursor: pointer;
+  margin-top: 15px;
+}
+section { padding: 55px 7%; }
+.section-heading {
+  display: flex;
+  justify-content: space-between;
+  align-items: end;
+  gap: 20px;
+  flex-wrap: wrap;
+  margin-bottom: 25px;
+}
+h2 { color: var(--green); font-size: 30px; margin: 8px 0; }
+.muted { color: #68756b; line-height: 1.7; }
+.filters {
+  display: flex;
+  gap: 10px;
+  flex-wrap: wrap;
+  margin-bottom: 28px;
+}
+.filters input, .filters select {
+  border: 1px solid #d7dfd4;
+  border-radius: 7px;
+  background: white;
+  padding: 12px;
+  min-width: 150px;
+}
+.filters input { flex: 1; }
+.trail-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 22px;
+}
+.card {
+  background: white;
+  border-radius: 13px;
+  overflow: hidden;
+  box-shadow: 0 5px 20px #213c1710;
+}
+.card img {
+  width: 100%;
+  height: 195px;
+  object-fit: cover;
+}
+.card-body { padding: 19px; }
+.tag {
+  display: inline-block;
+  background: #eaf2df;
+  color: #365d37;
+  padding: 6px 9px;
+  border-radius: 20px;
+  font-size: 12px;
+  font-weight: bold;
+}
+.card h3 { color: var(--green); margin-bottom: 8px; }
+.card p { color: #68756b; line-height: 1.6; font-size: 14px; }
+.stats {
+  display: flex;
+  gap: 16px;
+  border-top: 1px solid #edf0e9;
+  padding-top: 14px;
+  font-size: 12px;
+  flex-wrap: wrap;
+}
+.details-btn {
+  margin-top: 17px;
+  border: 1px solid var(--green);
+  color: var(--green);
+  background: white;
+  border-radius: 6px;
+  padding: 10px 14px;
+  cursor: pointer;
+}
+.details-btn:hover { background: var(--green); color: white; }
+#results { margin-bottom: 18px; color: #68756b; font-size: 14px; }
+.about {
+  background: #e9efdf;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 40px;
+  align-items: center;
+}
+.about img {
+  width: 100%;
+  height: 310px;
+  object-fit: cover;
+  border-radius: 12px;
+}
+.feature { margin: 18px 0; line-height: 1.7; }
+footer {
+  background: #1d3d2c;
+  color: white;
+  padding: 32px 7%;
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 12px;
+}
+footer p { color: #d2dfd2; font-size: 13px; }
+.empty {
+  background: white;
+  padding: 30px;
+  border-radius: 10px;
+  text-align: center;
+}
+@media(max-width: 850px) {
+  .trail-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  .about { grid-template-columns: 1fr; }
+}
+@media(max-width: 560px) {
+  header { padding: 18px 5%; flex-wrap: wrap; gap: 15px; }
+  nav a { margin-left: 10px; }
+  .hero { padding: 65px 6%; }
+  section { padding: 40px 5%; }
+  .trail-grid { grid-template-columns: 1fr; }
+  .filters input, .filters select { width: 100%; }
+}
+</style>
+</head>
+<body>
+
+<header>
+  <div class="logo">🌿 EcoTrail<span> Montenegro</span></div>
+  <nav>
+    <a href="#trails">Explore Trails</a>
+    <a href="#about">Our Mission</a>
+  </nav>
+</header>
+
+<main>
+  <div class="hero">
+    <div class="hero-content">
+      <div class="eyebrow">Discover the wild beauty of Montenegro</div>
+      <h1>Find your path.<br>Leave no trace.</h1>
+      <p>Explore breathtaking hiking trails, connect with nature, and discover Montenegro one step at a time.</p>
+      <button class="primary" onclick="document.getElementById('trails').scrollIntoView({behavior:'smooth'})">Explore trails ↓</button>
+    </div>
+  </div>
+
+  <section id="trails">
+    <div class="section-heading">
+      <div>
+        <div class="eyebrow" style="color:#64834c">YOUR NEXT ADVENTURE</div>
+        <h2>Explore the trails</h2>
+        <p class="muted">Find an adventure that matches your pace.</p>
+      </div>
+    </div>
+
+    <div class="filters">
+      <input id="search" type="search" placeholder="🔍 Search trails or locations..." aria-label="Search trails">
+      <select id="difficulty" aria-label="Filter by difficulty">
+        <option value="all">All difficulty levels</option>
+        <option value="Easy">Easy</option>
+        <option value="Moderate">Moderate</option>
+        <option value="Hard">Hard</option>
+      </select>
+      <select id="duration" aria-label="Filter by duration">
+        <option value="all">Any duration</option>
+        <option value="short">Under 3 hours</option>
+        <option value="medium">3–5 hours</option>
+        <option value="long">Over 5 hours</option>
+      </select>
+      <select id="elevation" aria-label="Filter by elevation">
+        <option value="all">Any elevation gain</option>
+        <option value="low">Under 300 m</option>
+        <option value="mid">300–700 m</option>
+        <option value="high">Over 700 m</option>
+      </select>
+    </div>
+
+    <div id="results" aria-live="polite"></div>
+    <div class="trail-grid" id="trailGrid"></div>
+  </section>
+
+  <section class="about" id="about">
+    <div>
+      <div class="eyebrow" style="color:#64834c">TRAVEL WITH PURPOSE</div>
+      <h2>Love nature.<br>Protect it.</h2>
+      <p class="muted">EcoTrail Montenegro connects outdoor explorers with the incredible landscapes and local communities that make our country special.</p>
+      <div class="feature">🌱 <strong>Travel responsibly</strong><br>Respect wildlife and leave natural places as you found them.</div>
+      <div class="feature">🥾 <strong>Explore confidently</strong><br>Discover trails suited to your experience and fitness.</div>
+      <div class="feature">🏡 <strong>Support local communities</strong><br>Discover local guides and sustainable accommodation.</div>
+    </div>
+    <img src="https://images.unsplash.com/photo-1472396961693-142e6e269027?auto=format&fit=crop&w=900&q=85" alt="Wildlife in a natural forest landscape">
+  </section>
+</main>
+
+<footer>
+  <div>
+    <strong>🌿 EcoTrail Montenegro</strong>
+    <p>Explore naturally. Preserve the extraordinary.</p>
+  </div>
+  <p>Student project · Demonstration prototype</p>
+</footer>
+
+<script>
+const trails = [
+  {
+    name:"Black Lake Loop",
+    location:"Durmitor National Park",
+    difficulty:"Easy",
+    hours:2,
+    elevation:50,
+    distance:"3.5 km",
+    description:"A scenic forest walk around a beautiful glacial lake.",
+    image:"https://images.unsplash.com/photo-1472396961693-142e6e269027?auto=format&fit=crop&w=800&q=80"
+  },
+  {
+    name:"Kotor Fortress Trail",
+    location:"Kotor",
+    difficulty:"Moderate",
+    hours:2,
+    elevation:260,
+    distance:"4 km",
+    description:"Climb above the historic town for spectacular bay views.",
+    image:"https://images.unsplash.com/photo-1516483638261-f4dbaf036963?auto=format&fit=crop&w=800&q=80"
+  },
+  {
+    name:"Bobotov Kuk",
+    location:"Durmitor National Park",
+    difficulty:"Hard",
+    hours:7,
+    elevation:950,
+    distance:"10 km",
+    description:"A challenging high-mountain adventure for experienced hikers.",
+    image:"https://images.unsplash.com/photo-1464822759023-fed622ff2c3b?auto=format&fit=crop&w=800&q=80"
+  },
+  {
+    name:"Biogradska Gora Walk",
+    location:"Biogradska Gora National Park",
+    difficulty:"Easy",
+    hours:2,
+    elevation:100,
+    distance:"3.5 km",
+    description:"Discover ancient forest and peaceful lakeside scenery.",
+    image:"https://images.unsplash.com/photo-1448375240586-882707db888b?auto=format&fit=crop&w=800&q=80"
+  },
+  {
+    name:"Ladder of Kotor",
+    location:"Kotor",
+    difficulty:"Hard",
+    hours:5,
+    elevation:700,
+    distance:"8 km",
+    description:"A steep historic route with dramatic mountain scenery.",
+    image:"https://images.unsplash.com/photo-1464278533981-50106e6176b1?auto=format&fit=crop&w=800&q=80"
+  },
+  {
+    name:"Lovćen Forest Trail",
+    location:"Lovćen National Park",
+    difficulty:"Moderate",
+    hours:4,
+    elevation:450,
+    distance:"7 km",
+    description:"Explore mountain forest and panoramic landscapes.",
+    image:"https://images.unsplash.com/photo-1441974231531-c6227db76b6e?auto=format&fit=crop&w=800&q=80"
+  }
+];
+
+function renderTrails() {
+  const search = document.getElementById("search").value.toLowerCase().trim();
+  const difficulty = document.getElementById("difficulty").value;
+  const duration = document.getElementById("duration").value;
+  const elevation = document.getElementById("elevation").value;
+
+  const filtered = trails.filter(trail => {
+    const matchesSearch = (trail.name + " " + trail.location).toLowerCase().includes(search);
+    const matchesDifficulty = difficulty === "all" || trail.difficulty === difficulty;
+    const matchesDuration = duration === "all" ||
+      (duration === "short" && trail.hours < 3) ||
+      (duration === "medium" && trail.hours >= 3 && trail.hours <= 5) ||
+      (duration === "long" && trail.hours > 5);
+    const matchesElevation = elevation === "all" ||
+      (elevation === "low" && trail.elevation < 300) ||
+      (elevation === "mid" && trail.elevation >= 300 && trail.elevation <= 700) ||
+      (elevation === "high" && trail.elevation > 700);
+
+    return matchesSearch && matchesDifficulty && matchesDuration && matchesElevation;
+  });
+
+  document.getElementById("results").textContent =
+    `Showing ${filtered.length} of ${trails.length} sample trails`;
+
+  const grid = document.getElementById("trailGrid");
+
+  if (filtered.length === 0) {
+    grid.innerHTML = '<div class="empty">No trails match your filters. Try changing your search.</div>';
+    return;
+  }
+
+  grid.innerHTML = filtered.map((trail, index) => `
+    <article class="card">
+      <img src="${trail.image}" alt="${trail.name}" loading="lazy">
+      <div class="card-body">
+        <span class="tag">${trail.difficulty}</span>
+        <h3>${trail.name}</h3>
+        <p>📍 ${trail.location}</p>
+        <p>${trail.description}</p>
+        <div class="stats">
+          <span>🥾 ${trail.distance}</span>
+          <span>⏱ ${trail.hours} hours</span>
+          <span>↗ ${trail.elevation} m gain</span>
+        </div>
+        <button class="details-btn" data-index="${index}">Trail details</button>
+      </div>
+    </article>
+  `).join("");
+
+  grid.querySelectorAll(".details-btn").forEach(button => {
+    button.addEventListener("click", () => {
+      const trail = filtered[Number(button.dataset.index)];
+      alert(
+        trail.name + "\\n" + trail.location +
+        "\\nDifficulty: " + trail.difficulty +
+        "\\nDuration: " + trail.hours + " hours" +
+        "\\nElevation gain: " + trail.elevation + " m" +
+        "\\n\\n" + trail.description +
+        "\\n\\nDemonstration data: check official local guidance before hiking."
+      );
+    });
+  });
+}
+
+["search", "difficulty", "duration", "elevation"].forEach(id => {
+  document.getElementById(id).addEventListener("input", renderTrails);
+  document.getElementById(id).addEventListener("change", renderTrails);
+});
+
+renderTrails();
+</script>
+</body>
+</html>
